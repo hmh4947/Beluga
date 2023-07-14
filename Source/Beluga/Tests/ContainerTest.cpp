@@ -12,9 +12,9 @@ bool FBelugaArrayTest::RunTest(const FString& Parameters)
 }
 
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FBelugaMapTest, "Beluga.Map", \
-	EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::EngineFilter)
+EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::EngineFilter)
 
-	bool FBelugaMapTest::RunTest(const FString& Parameters)
+bool FBelugaMapTest::RunTest(const FString& Parameters)
 {
 	TMap<FName, FString> map = {{TEXT("A"), TEXT("Apple")}, { TEXT("B"), TEXT("Banana") }, { TEXT("C"), TEXT("Cherry") }};
 	return true;
@@ -23,7 +23,7 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(FBelugaMapTest, "Beluga.Map", \
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FBelugaSetTest, "Beluga.Set", \
 	EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::EngineFilter)
 
-	bool FBelugaSetTest::RunTest(const FString& Parameters)
+bool FBelugaSetTest::RunTest(const FString& Parameters)
 {
 	TSet<int32> set = { 1, 2, 3 };
 
@@ -32,4 +32,5 @@ IMPLEMENT_SIMPLE_AUTOMATION_TEST(FBelugaSetTest, "Beluga.Set", \
 	//TestTrue(TEXT("Set Add"), );
 
 	return true;
+
 }

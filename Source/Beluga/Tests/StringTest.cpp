@@ -1,6 +1,6 @@
 #include "BelugaMinimal.h"
 #include "Misc/AutomationTest.h"
-
+//FString 조작이 가능
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FBelugaStringTest, "Beluga.String", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::EngineFilter)
 
 bool FBelugaStringTest::RunTest(const FString& Parameters)
@@ -8,16 +8,18 @@ bool FBelugaStringTest::RunTest(const FString& Parameters)
 	// 생성, 대입
 	{
 		FString strChar("char");
-		FString strWChar(L"wchar");
-		FString strTChar(TEXT("wchar"));
+		FString strChar2(L"wchar");
+		FString strChar3(TEXT("wchar"));
 
 		strChar = "char";
-		strWChar = "wchar";
-		strTChar = TEXT("wchar");
+		strChar2 = "wchar";
+		strChar3 = TEXT("wchar");
 	}
 
 	// Printf
+
 	{
+		
 		TestEqual(TEXT("Printf"), FString::Printf(TEXT("%d %f %s"), 123, 1.0f, TEXT("string")), TEXT("123 1.000000 string"));
 	}
 
@@ -62,8 +64,19 @@ bool FBelugaStringTest::RunTest(const FString& Parameters)
 }
 
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FBelugaNameTest, "Beluga.Name", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::EngineFilter)
-
 bool FBelugaNameTest::RunTest(const FString& Parameters)
 {
+	
+
+	static const FName NAME_FunctionalTesting = FName(TEXT("FunctionalTesting"));
+	FName Name = NAME_None;
+
+	return true;
+}
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FBelugaTextTest, "Beluga.Text", EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::EngineFilter)
+bool FBelugaTextTest::RunTest(const FString& Parameters)
+{
+	
 	return true;
 }
